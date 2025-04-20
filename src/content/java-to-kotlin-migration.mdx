@@ -1,0 +1,103 @@
+---
+title: "Lessons from Refactoring Java to Kotlin in Production Systems"
+summary: "Dynamic UI platforms are becoming the norm. If you’re still hardcoding your forms, you’re leaving velocity and flexibility on the table. JSON Schema offers a powerful foundation for building dynamic, maintainable, and scalable user interfaces."
+type: Blog
+publishedAt: 2021-05-01
+---
+
+<Image src="/_static/blogs/aws-s3-nestjs/thumbnail.png" width={1280} height={720} alt="thumbnail" />
+
+Refactoring isn’t glamorous, but it's the backbone of resilient software. At Lean Station, we took on the challenge of migrating legacy Java services to Kotlin in a live production environment. The results were well worth it: cleaner code, better safety, and a more modern developer experience.
+
+Here are some of the key lessons we learned while refactoring Java to Kotlin—without breaking things.
+
+---
+
+### Why Kotlin?
+
+Before diving into the how, let's answer the why:
+- **Null safety**: Fewer `NullPointerExceptions` = happier engineers
+- **Conciseness**: Less boilerplate, more logic per line
+- **Interoperability**: Full Java compatibility makes migration incremental
+- **Coroutines**: Lightweight concurrency without the complexity of threads
+
+Kotlin offered the best of both worlds: modern syntax with JVM compatibility.
+
+---
+
+### 1. Plan the Migration Scope
+
+We started by identifying services with:
+- High code churn (frequently touched)
+- Low test coverage (needed improvement anyway)
+- Business-critical logic (to be handled last)
+
+This helped us minimize risk and maximize the impact of early wins.
+
+---
+
+### 2. Migrate Gradually, Not All at Once
+
+Kotlin and Java coexist beautifully in the same codebase. We used this to our advantage:
+- Converted utility classes first
+- Then moved on to service layers
+- Left controllers and endpoints for last
+
+We ensured every Kotlin file had **unit tests or integration coverage** before merging. This disciplined, piecemeal approach prevented regressions.
+
+---
+
+### 3. Embrace Kotlin Idioms Early
+
+Merely translating Java to Kotlin misses the point. We leaned into Kotlin idioms:
+- `data class` for immutability
+- Extension functions for reuse
+- `sealed class` for type-safe state management
+- `when` expressions instead of nested `if-else`
+
+These made the code not only shorter but also **easier to reason about**.
+
+---
+
+### 4. Use Tooling to Your Advantage
+
+JetBrains tooling saved us hours:
+- IntelliJ's Java-to-Kotlin converter for initial drafts
+- Detekt and Ktlint for style enforcement
+- Kotlin compiler flags (`-Xjsr305=strict`) for better null-safety enforcement
+
+We also added Kotlin-specific static analysis to our CI pipeline for early issue detection.
+
+---
+
+### 5. Watch Out for Hidden Pitfalls
+
+Some pain points we ran into:
+- **Unchecked casts**: Java's type erasure doesn’t disappear magically
+- **Framework issues**: Some older Spring Boot versions had limited Kotlin support
+- **Overusing `!!`**: It defeats the purpose of null safety—refactor instead
+- **Mixed method overloads**: Can behave differently between Java and Kotlin
+
+Refactoring in prod requires being paranoid—and that's a good thing.
+
+---
+
+### Real-World Wins
+
+After migrating key services to Kotlin, we:
+- Reduced file sizes by **40-60%**
+- Increased test coverage across services
+- Shipped features faster due to clearer, safer code
+- Saw a decline in production bugs related to null values and incorrect states
+
+The development experience improved, and so did long-term maintainability.
+
+---
+
+### Final Thoughts
+
+Kotlin made our codebase more modern, expressive, and safe—without disrupting production. If you're sitting on legacy Java services and dreading a rewrite, consider Kotlin as a bridge to the future.
+
+Start small, migrate with discipline, and don’t forget to test everything twice.
+
+---
