@@ -20,7 +20,7 @@ export default function Projects() {
           role="list"
           className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 "
         >
-          {WEB_APPS.map((project, idx) => (
+          {WEB_APPS.map((project: any, idx) => (
             <ProjectCard project={project} key={idx} />
           ))}
         </div>
@@ -30,7 +30,7 @@ export default function Projects() {
         <h1 className="mb-4 text-2xl font-bold tracking-tighter">Tools</h1>
 
         <div role="list" className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          {TOOLS.map((project, idx) => (
+          {TOOLS.map((project: any, idx) => (
             <div
               key={idx}
               className="flex cursor-pointer flex-col

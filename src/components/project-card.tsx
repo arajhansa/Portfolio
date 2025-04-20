@@ -4,7 +4,8 @@ import { WEB_APPS } from "@/data/projects";
 import Image from "next/image";
 
 type Props = {
-  project: (typeof WEB_APPS)[number];
+  // project: (typeof WEB_APPS)[number];
+  project: any;
 };
 
 export const ProjectCard = ({ project }: Props) => {
@@ -29,7 +30,7 @@ export const ProjectCard = ({ project }: Props) => {
           {project.description}
         </div>
         <div className="z-10 mb-6 mt-6 flex flex-wrap gap-1 ">
-          {project.tags.map((techStackItem) => (
+          {project.tags.map((techStackItem: any) => (
             <p
               className="hover:text-primary dark:hover:text-primary inline-flex items-center rounded-full bg-zinc-100 px-2.5 py-0.5 text-xs leading-4 text-zinc-600 dark:bg-zinc-800 dark:text-zinc-200"
               key={techStackItem}

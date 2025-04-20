@@ -83,18 +83,18 @@ export default function Home() {
 
       <div className="my-8 w-full border-t border-gray-200 dark:border-gray-800" />
 
-      <div>
-        <h2 className="mb-6 text-2xl font-bold">Latest posts</h2>
-        <ul>
-          {blogs.map((blog) => (
-            <li key={blog.slug} className="py-1">
-              <Link href={`/blog/${blog.slug}`}>
-                <BlogCard blog={blog} key={blog.slug} />
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+      {/*<div>*/}
+      {/*  <h2 className="mb-6 text-2xl font-bold">Latest posts</h2>*/}
+      {/*  <ul>*/}
+      {/*    {blogs.map((blog) => (*/}
+      {/*      <li key={blog.slug} className="py-1">*/}
+      {/*        <Link href={`/blog/${blog.slug}`}>*/}
+      {/*          <BlogCard blog={blog} key={blog.slug} />*/}
+      {/*        </Link>*/}
+      {/*      </li>*/}
+      {/*    ))}*/}
+      {/*  </ul>*/}
+      {/*</div>*/}
     </React.Fragment>
   );
 }

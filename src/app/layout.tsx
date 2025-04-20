@@ -79,8 +79,8 @@ export default function RootLayout({
           </main>
           <TailwindIndicator />
         </ThemeProvider>
-        <GoogleAnalytics gaId={ENV.GOOGLE_ANALYTICS_ID} />
-        <GoogleAdsense pId={ENV.ADSENSE_CLIENT_ID} />
+        {/*<GoogleAnalytics gaId={ENV.GOOGLE_ANALYTICS_ID} />*/}
+        {/*<GoogleAdsense pId={ENV.ADSENSE_CLIENT_ID} />*/}
       </body>
     </html>
   );
