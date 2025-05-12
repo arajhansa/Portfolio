@@ -1,5 +1,5 @@
 import { generatePageMetadata } from "../seo";
-import { ProjectCard } from "../../components/project-card";
+import { ProjectCard } from "@/components/project-card";
 import React from "react";
 import { WEB_APPS, TOOLS } from "@/data/projects";
 import { SocialLink } from "@/components/social-link";
