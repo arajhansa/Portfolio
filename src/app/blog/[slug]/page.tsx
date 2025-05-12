@@ -1,5 +1,4 @@
-import type { GetStaticPaths, Metadata } from "next";
-import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import { allBlogs } from "contentlayer/generated";
 import Balancer from "react-wrap-balancer";
 import { Mdx } from "@/components/mdx";
